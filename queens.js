@@ -1,8 +1,14 @@
 // N Queens solutions calculator
 var calc = function(n) {
 
+  // Check correct input
+  if (typeof n !== 'number' || n <= 0) {
+    return 'The board must have a size greater or equal to 1';
+  }
+
   // Board and counters
-  var boardLimit = 0<<n;
+  var boardLimit
+  n === 1 ? boardLimit = 0 : boardLimit = 1 << n-1;
   var col = 0;
   var majDiag = 0;
   var minDiag = 0;
@@ -15,20 +21,19 @@ var calc = function(n) {
     var newMajDiag = majDiag >>> 1;
     var newMinDiag = minDiag << 1;
     var row = newCol | newMajDiag | newMinDiag;
-    for (var i = 0; i <= boardLimit; i<<1) {
-      // ** Still need to figure out this part - the rest should be ok **
-      if (row[i] === 0) {
-        newCol[i] = 1;
+    for (var i = 1; i <= boardLimit; i = i << 1) {
+      if (~row & i) {
+        newCol = newCol | i;
         counter++;
-        newMajDiag[i] = 1;
-        newMinDiag[i] = 1;
+        newMajDiag = newMajDiag | i;
+        newMinDiag = newMinDiag | i;
         if (counter === n) {
           solutions++;
         }
         inspect(newCol, newMajDiag, newMinDiag);
-        newCol[i] = 0;
-        newMajDiag[i] = 0;
-        newMinDiag[i] = 0;
+        newCol = newCol & ~i;
+        newMajDiag = newMajDiag & ~i;
+        newMinDiag = newMinDiag & ~i;
         counter--;
       }
     }
@@ -36,7 +41,3 @@ var calc = function(n) {
   inspect(col, majDiag, minDiag);
   return solutions;
 };
-
-// console.log(calc(8));
-
-
