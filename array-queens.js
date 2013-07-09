@@ -1,3 +1,14 @@
+/**
+ * Array Queens
+ * 
+ * A JavaScript algorithm with arrays of zeros and ones
+ * that simulates a bitwise approach to solve the N-Queens problem.
+ *
+ * The MIT License (MIT)
+ * Copyright (c) Alessandro Zanardi
+ * 
+ */
+
 // N Queens solutions calculator
 var calc = function(n) {
 

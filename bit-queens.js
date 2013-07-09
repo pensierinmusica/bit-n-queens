@@ -1,3 +1,13 @@
+/**
+ * Bit Queens
+ * 
+ * A JavaScript bitwise algorithm to solve the N-Queens problem.
+ * 
+ * The MIT License (MIT)
+ * Copyright (c) Alessandro Zanardi
+ * 
+ */
+
 // N Queens solutions calculator
 var calc = function(n) {
 
