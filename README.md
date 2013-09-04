@@ -6,9 +6,9 @@ A JavaScript bitwise algorithm to solve the N-Queens problem (http://en.wikipedi
 
 ## Notes
 
-'bit-queens.js' is the bitwise implementation.
+"bit-queens.js" is the bitwise implementation.
 
-'array-queens.js' simulates the same algorithm with arrays of zeros and ones.
+"array-queens.js" simulates the same algorithm with arrays of zeros and ones.
 
 ## License
 
